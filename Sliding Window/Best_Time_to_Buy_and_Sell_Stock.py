@@ -1,21 +1,16 @@
 def examp():
+    prices = [3,2,6,5,0,3]
 
-    prices = [7,1,5,3,6,4]
+    buy, sell = 0, 1
+    maxP = 0
 
-    seen = 0
-    left = 0
-    right = len(prices)
-
-    while left < right: 
-        
-        current = prices[left]
-
-        if current < seen:
-            seen = current
-            
-
-        if prices[left] > prices[right]:
-            left = left + 1
-        
+    while sell < len(prices):
+        if prices[buy] < prices[sell]:
+            profit = prices[sell] - prices[buy]
+            maxP = max(maxP, profit) 
+        else:
+            buy += 1
+        sell += 1
+    print(maxP)
 
 examp()
