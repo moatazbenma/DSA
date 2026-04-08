@@ -1,11 +1,18 @@
-s = [1, 2, 3]
+s = [1, 1, 1]
 
-sum = []
+k = 2
 
-k = 3
+count = 0
+prefix_sum = 0
+hashmap = {0: 1}
 
-for i in range(len(s)):
-    total = 0 
-    for j in range(i, len(s)):
-        print(s[j])
-        
+
+for num in s:
+    prefix_sum += num
+
+    if prefix_sum - k in hashmap:
+        count += hashmap[prefix_sum - k]
+
+    hashmap[prefix_sum] = hashmap.get(prefix_sum, 0) + 1
+
+print(count)
