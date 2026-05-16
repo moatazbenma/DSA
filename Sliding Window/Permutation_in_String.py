@@ -2,7 +2,6 @@ def examp():
 
     s1 = "ab"
     s2 = "eidbaooo"
-    count = 0
 
     dic_s1 = {}
 
