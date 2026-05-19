@@ -28,6 +28,6 @@ def examp():
             
 
 
-    print(min_len)
+    print(0 if min_len == float('inf') else min_len)
 
 examp()
