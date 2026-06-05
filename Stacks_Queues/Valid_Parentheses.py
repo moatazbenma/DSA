@@ -2,7 +2,6 @@ def examp():
     s = "()[]{}"
 
     save = []
-    count = 0
 
     for char in s:
         if char == "(" or char == "[" or char == "{":
