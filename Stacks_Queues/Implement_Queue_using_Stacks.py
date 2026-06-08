@@ -8,21 +8,25 @@ class MyQueue:
         self.stackA.append(x)
 
     def pop(self):
-        self.stackA.pop()
+        if not self.stackB:
+            while self.stackA:
+                self.stackB.append(self.stackA.pop())
+
+        return self.stackB.pop()
         
         
 
     def peek(self):
-        print(self.stackA[0])
+        if not self.stackB:
+            while self.stackA:
+                self.stackB.append(self.stackA.pop())
+
+        return self.stackB[-1]
     
     def empty(self):
-        if len(self.stackA) == 0:
-            print(True)
-        else:
-            print(False)
+        return len(self.stackA) == 0 and len(self.stackB) == 0
         
-    def s(self):
-        return self.stackA
+
 
     
     
@@ -30,14 +34,7 @@ class MyQueue:
 
 queue = MyQueue()
 queue.push(1)
-queue.push(2)
-queue.push(3)
 
-queue.pop()
-
-while queue.stackA:
-    value = queue.stackA.pop()
-    queue.stackB.append(value)
 
 
 print(queue.stackB)
